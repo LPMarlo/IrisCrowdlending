@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_borrower_home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="@string/title_borrower_home" />
+
+    <item
+        android:id="@+id/navigation_borrower_new_loan"
+        android:icon="@drawable/ic_baseline_edit_note_24"
+        android:title="@string/title_borrower_new_loan" />
+
+    <item
+        android:id="@+id/navigation_borrower_notifications"
+        android:icon="@drawable/ic_baseline_notifications_24"
+        android:title="@string/title_borrower_notifications" />
+
+</menu>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <item
+            android:id="@+id/navigation_lender_home"
+            android:icon="@drawable/ic_baseline_home_24"
+            android:title="@string/title_lender_home" />
+
+        <item
+            android:id="@+id/navigation_lender_loans"
+            android:icon="@drawable/ic_baseline_request_page_24"
+            android:title="@string/title_lender_loans" />
+
+        <item
+            android:id="@+id/navigation_lender_retributions"
+            android:icon="@drawable/ic_baseline_payment_24"
+            android:title="@string/title_lender_retributions" />
+
+</menu>

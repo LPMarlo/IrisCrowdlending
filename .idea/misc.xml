@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3635" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/drawable/card_background.xml" value="0.2265" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/drawable/card_background_red.xml" value="0.1935" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/drawable/card_background_teal.xml" value="0.3085" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/drawable/circle_background.xml" value="0.2265" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.3085" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/drawable/ic_baseline_supervised_user_circle_24.xml" value="0.1935" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/drawable/ic_dise_o_sin_t_tulo.xml" value="0.3635" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3635" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/drawable/ic_logo.xml" value="0.3635" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/drawable/ic_logo__2_.xml" value="0.3635" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/drawable/login_image.xml" value="0.2985" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/drawable/settings_image_button.xml" value="0.2265" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/activity_borrower_main.xml" value="0.4" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/activity_borrower_settings.xml" value="0.4" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/activity_choice_profile.xml" value="0.4" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/activity_lender_main.xml" value="0.1671195652173913" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/activity_lender_settings.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/activity_main.xml" value="0.536" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/activity_sign_up.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/fragment_borrower_home.xml" value="0.4393939393939394" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/fragment_borrower_new_loan.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/fragment_borrower_notifications.xml" value="0.2222222222222222" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/fragment_lender_home.xml" value="0.5370370370370371" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/fragment_lender_loans.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/fragment_lender_retributions.xml" value="0.32222222222222224" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/item_borrower_home.xml" value="0.75" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/menu/bottom_nav_borrower_menu.xml" value="0.32222222222222224" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/menu/bottom_nav_lender_menu.xml" value="0.32222222222222224" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

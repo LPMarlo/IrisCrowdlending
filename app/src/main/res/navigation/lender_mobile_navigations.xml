@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_lender_home">
+
+    <fragment
+        android:id="@+id/navigation_lender_home"
+        android:name="com.lpmarlo.iris.lender.ui.LenderHomeFragment"
+        android:label="@string/title_lender_home"
+        tools:layout="@layout/fragment_lender_home" />
+
+    <fragment
+        android:id="@+id/navigation_lender_loans"
+        android:name="com.lpmarlo.iris.lender.ui.LenderLoansFragment"
+        android:label="@string/title_lender_loans"
+        tools:layout="@layout/fragment_lender_loans" />
+
+    <fragment
+        android:id="@+id/navigation_lender_retributions"
+        android:name="com.lpmarlo.iris.lender.ui.LenderRetributionsFragment"
+        android:label="@string/title_lender_retributions"
+        tools:layout="@layout/fragment_lender_retributions" />
+</navigation>

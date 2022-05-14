@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".borrower.ui.BorrowerNewLoanFragment"
+    android:id="@+id/newLoanLayout">
+
+    <Button
+        android:id="@+id/newLoanButton"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginBottom="148dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="signUp"
+        android:text="create new loan"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numberFeesNewLoanTextView" />
+
+    <TextView
+        android:id="@+id/titleNewLoanTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="New loan"
+        android:textColor="@android:color/black"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/amountNewLoanEditText"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/card_background"
+        android:ems="10"
+        android:hint="Amount"
+        android:inputType="number"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleNewLoanTextView" />
+
+    <EditText
+        android:id="@+id/descriptionNewLoanEditText"
+        android:layout_width="302dp"
+        android:layout_height="228dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/card_background"
+        android:ems="10"
+        android:gravity="top|start"
+        android:hint="Description"
+        android:inputType="textImeMultiLine"
+        android:lines="4"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="20dp"
+        android:textAlignment="textStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/amountNewLoanEditText" />
+
+    <TextView
+        android:id="@+id/interestNewLoanTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Interest: %"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/descriptionNewLoanEditText"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionNewLoanEditText" />
+
+    <TextView
+        android:id="@+id/numberFeesNewLoanTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Number of fees:"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/interestNewLoanTextView"
+        app:layout_constraintTop_toBottomOf="@+id/interestNewLoanTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

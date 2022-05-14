@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_borrower_home">
+
+    <fragment
+        android:id="@+id/navigation_borrower_home"
+        android:name="com.lpmarlo.iris.borrower.ui.BorrowerHomeFragment"
+        android:label="@string/title_borrower_home"
+        tools:layout="@layout/fragment_borrower_home" />
+
+    <fragment
+        android:id="@+id/navigation_borrower_new_loan"
+        android:name="com.lpmarlo.iris.borrower.ui.BorrowerNewLoanFragment"
+        android:label="@string/title_borrower_new_loan"
+        tools:layout="@layout/fragment_borrower_new_loan" />
+
+    <fragment
+        android:id="@+id/navigation_borrower_notifications"
+        android:name="com.lpmarlo.iris.borrower.ui.BorrowerNotificationsFragment"
+        android:label="@string/title_borrower_notifications"
+        tools:layout="@layout/fragment_borrower_notifications" />
+</navigation>
