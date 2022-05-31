@@ -6,4 +6,66 @@
     android:layout_height="match_parent"
     tools:context=".lender.LenderSettingsActivity">
 
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/settings_title"
+        android:textColor="@color/secondaryDark"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/changeLanguageBorrowerSettingsButton4"
+        android:layout_width="319dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/card_background"
+        android:text="@string/language_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/methodPaymentsBorrowerSettingsButton5" />
+
+    <Button
+        android:id="@+id/changeDataBorrowerSettingsButton4"
+        android:layout_width="319dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/card_background"
+        android:text="@string/change_data_option"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/changeLanguageBorrowerSettingsButton4" />
+
+    <Button
+        android:id="@+id/logoutBorrowerSettingsButton4"
+        android:layout_width="319dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/card_background"
+        android:onClick="logoutLender"
+        android:text="@string/logout_option"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/changeDataBorrowerSettingsButton4" />
+
+    <Button
+        android:id="@+id/methodPaymentsBorrowerSettingsButton5"
+        android:layout_width="319dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/card_background"
+        android:text="@string/method_payments_option"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

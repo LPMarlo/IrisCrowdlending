@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".auth.ChoiceProfileActivity">
+    tools:context=".commons.ChoiceProfileActivity">
 
     <Button
         android:id="@+id/BorrowerOptionButton"
@@ -73,6 +73,7 @@
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@drawable/ic_baseline_supervisor_account_24" />
+        app:srcCompat="@drawable/ic_baseline_supervisor_account_24"
+        android:contentDescription="@string/account_picture" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

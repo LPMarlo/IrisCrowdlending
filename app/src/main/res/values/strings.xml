@@ -45,4 +45,24 @@
     <string name="titleIris">Iris</string>
     <string name="loans_available">LOANS AVAILABLE</string>
     <string name="loansTitle">Loans</string>
+    <string name="surnames">Surnames</string>
+    <string name="phone_number">Phone number</string>
+    <string name="login_picture">Login picture</string>
+    <string name="settings_title">Settings</string>
+    <string name="method_payments_option">Method payments</string>
+    <string name="language_title">Language</string>
+    <string name="change_data_option">Change data</string>
+    <string name="logout_option">logout</string>
+    <string name="account_picture">Account picture</string>
+    <string name="create_new_loan">create new loan</string>
+    <string name="new_loan">New loan</string>
+    <string name="amount">Amount</string>
+    <string name="description">Description</string>
+    <string name="interest">Interest: 5%</string>
+    <string name="number_of_fees">Number of fees: 48</string>
+    <string name="notification_picture">Notification picture</string>
+    <string name="title">Title</string>
+    <string name="subtitle">Subtitle</string>
+    <string name="_0_min_ago">0 min ago</string>
+    <string name="notifications_title">Notifications</string>
 </resources>

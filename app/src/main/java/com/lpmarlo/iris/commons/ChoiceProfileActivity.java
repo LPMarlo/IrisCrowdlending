@@ -1,4 +1,4 @@
-package com.lpmarlo.iris.auth;
+package com.lpmarlo.iris.commons;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.lpmarlo.iris.R;
+import com.lpmarlo.iris.commons.auth.LoginActivity;
 
 public class ChoiceProfileActivity extends AppCompatActivity {
 
@@ -32,5 +33,10 @@ public class ChoiceProfileActivity extends AppCompatActivity {
         editor.putString("userType", "borrower");
         editor.apply();
         startActivity(new Intent(this, LoginActivity.class));
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 }

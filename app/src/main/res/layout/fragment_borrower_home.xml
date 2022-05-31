@@ -60,6 +60,7 @@
         app:layout_constraintTop_toBottomOf="@+id/titleHome" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/borrowerHomeRecycleView"
         android:layout_width="match_parent"
         android:layout_height="720dp"
         android:layout_marginTop="34dp"
@@ -67,6 +68,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleBorrowerHomeRecycleViewTextView"
-        tools:listitem=""/>
+        tools:listitem="@layout/item_template"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
