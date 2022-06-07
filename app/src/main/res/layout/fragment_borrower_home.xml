@@ -57,17 +57,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleHome" />
+        app:layout_constraintTop_toBottomOf="@+id/titleHome"
+        tools:ignore="TextContrastCheck" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/borrowerHomeRecycleView"
+        android:id="@+id/borrowerHomeRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="720dp"
-        android:layout_marginTop="34dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="696dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleBorrowerHomeRecycleViewTextView"
-        tools:listitem="@layout/item_template"/>
+        tools:listitem="@layout/item_loans" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

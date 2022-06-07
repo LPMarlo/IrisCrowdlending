@@ -35,7 +35,7 @@
     <string name="title_borrower_home">Home</string>
     <string name="title_borrower_new_loan">New Loan</string>
     <string name="title_borrower_notifications">Notifications</string>
-    <string name="title_borrower_home_recycleview">LOANS REALISED</string>
+    <string name="title_borrower_home_recycleview">MADE LOANS</string>
     <string name="settings">settings</string>
     <string name="titleChoiceProfile">Account</string>
     <string name="subtitleChoiceProfile">Choose a type of account:</string>

@@ -1,19 +1,26 @@
 package com.lpmarlo.iris.commons.models;
 
+import com.google.firebase.Timestamp;
+
+import java.util.Date;
+
 public class Payment {
 
     private String id;
     private String lenderId;
     private String loanId;
     private String amount;
-    private String date;
+    private Timestamp date;
 
-    public Payment(String id, String lenderId, String loanId, String amount, String date) {
-        this.id = id;
+    public Payment() {
+    }
+
+    public Payment(String lenderId, String loanId, String amount) {
+        this.id = lenderId + System.currentTimeMillis() * Math.random() * 100;
         this.lenderId = lenderId;
         this.loanId = loanId;
         this.amount = amount;
-        this.date = date;
+        this.date = Timestamp.now();
     }
 
     public String getId() {
@@ -48,11 +55,11 @@ public class Payment {
         this.amount = amount;
     }
 
-    public String getDate() {
+    public Timestamp getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Timestamp date) {
         this.date = date;
     }
 }

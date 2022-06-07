@@ -185,60 +185,15 @@ public class FirebaseManager {
                 .delete();
     }
 
-    public List<Notification> getAllNotifications() {
-
-        String userId = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
-        List<Notification> notifications = new ArrayList<>();
-
-        db.collection("loans")
-                .whereEqualTo("borrowerId", userId)
-                .orderBy("date", Query.Direction.DESCENDING)
-                .limit(1)
-                .get()
-                .addOnSuccessListener(queryDocumentSnapshots -> {
-                            if (queryDocumentSnapshots.isEmpty()) {
-                                Log.i("Loans", "There are no loans");
-                            } else {
-                                for (QueryDocumentSnapshot queryDocumentSnapshot : queryDocumentSnapshots) {
-                                    Loan loan = queryDocumentSnapshot.toObject(Loan.class);
-                                    // Obtener todos los pagos de este prestamo
-                                    db.collection("payments")
-                                            .whereEqualTo("loanId", loan.getId())
-                                            .get()
-                                            .addOnSuccessListener(queryDocumentSnapshots1 -> {
-                                                if (queryDocumentSnapshots1.isEmpty()) {
-                                                    Log.i("Payments", "There are no payments");
-                                                } else {
-                                                    for (QueryDocumentSnapshot queryDocumentSnapshot1 : queryDocumentSnapshots1) {
-                                                        Payment payment = queryDocumentSnapshot1.toObject(Payment.class);
-                                                        // Obtener el prestamista
-                                                        db.collection("lenders")
-                                                                .whereEqualTo("lenderId", payment.getLenderId())
-                                                                .get()
-                                                                .addOnSuccessListener(queryDocumentSnapshots2 -> {
-                                                                    if (queryDocumentSnapshots2.isEmpty()) {
-                                                                        Log.i("Lenders", "There are no lenders");
-                                                                    } else {
-                                                                        for (QueryDocumentSnapshot queryDocumentSnapshot2 : queryDocumentSnapshots2) {
-                                                                            Lender lender = queryDocumentSnapshot2.toObject(Lender.class);
-                                                                            notifications.add(new Notification(lender.getName(), payment.getAmount(), payment.getDate()));
-                                                                        }
-                                                                    }
-                                                                });
-                                                    }
-                                                }
-                                            });
-                                }
-                            }
-                        }
-                );
-        return notifications;
-    }
-
     public void createNewLoan(String amount, String description) {
         String userId = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
         db.collection("loans")
-                .add(new Loan(amount, description, userId, new Date(), 0.05, "PENDING", 48, getDeadline()));
+                .add(new Loan(amount, description, userId, new Date(), 0.05, 48, getDeadline()))
+                .addOnSuccessListener(documentReference -> {
+                    db.collection("loans")
+                            .document(documentReference.getId())
+                            .update("id", documentReference.getId());
+                });
     }
 
     private Date getDeadline() {

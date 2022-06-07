@@ -28,6 +28,6 @@
         app:layout_constraintTop_toBottomOf="@+id/titleNewLoanTextView"
         app:layout_constraintVertical_bias="1.0"
         tools:layout_editor_absoluteX="0dp"
-        tools:listitem="@layout/item_template"/>
+        tools:listitem="@layout/item_loans"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

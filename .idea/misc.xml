@@ -3,11 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/SDK/platforms/android-32/data/res/layout/auto_complete_list.xml" value="0.1648148148148148" />
         <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3635" />
         <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/drawable/card_background.xml" value="0.2265" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/drawable/card_background_dialog.xml" value="0.1935" />
         <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/drawable/card_background_red.xml" value="0.1935" />
         <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/drawable/card_background_teal.xml" value="0.3085" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/drawable/card_background_white.xml" value="0.1935" />
         <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/drawable/circle_background.xml" value="0.2265" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/drawable/ic_baseline_add_box_24.xml" value="0.324" />
         <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.3085" />
         <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/drawable/ic_baseline_supervised_user_circle_24.xml" value="0.1935" />
         <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/drawable/ic_dise_o_sin_t_tulo.xml" value="0.3635" />
@@ -17,22 +21,26 @@
         <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.1925" />
         <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/drawable/login_image.xml" value="0.2985" />
         <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/drawable/settings_image_button.xml" value="0.2265" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/drawable/splash_screen.xml" value="0.161" />
         <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/activity_borrower_main.xml" value="0.4" />
-        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/activity_borrower_settings.xml" value="0.4" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/activity_borrower_settings.xml" value="0.25" />
         <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/activity_choice_profile.xml" value="0.4" />
         <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/activity_lender_main.xml" value="0.1671195652173913" />
-        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/activity_lender_settings.xml" value="0.4" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/activity_lender_settings.xml" value="0.33" />
         <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/activity_main.xml" value="0.536" />
         <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/activity_sign_up.xml" value="0.33" />
-        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/fragment_borrower_home.xml" value="0.33" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/dialog_payment.xml" value="0.67" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/fragment_borrower_home.xml" value="0.25" />
         <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/fragment_borrower_new_loan.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/fragment_borrower_notifications.xml" value="0.2222222222222222" />
-        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/fragment_lender_home.xml" value="0.5370370370370371" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/fragment_lender_home.xml" value="0.5189655172413793" />
         <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/fragment_lender_loans.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/fragment_lender_retributions.xml" value="0.32222222222222224" />
         <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/item_borrower_home.xml" value="0.75" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/item_lender_loans.xml" value="0.5" />
         <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/item_template.xml" value="0.5" />
+        <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/layout/splash_screen.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/menu/bottom_nav_borrower_menu.xml" value="0.32222222222222224" />
         <entry key="..\:/AndroidStudioProjects/Iris/app/src/main/res/menu/bottom_nav_lender_menu.xml" value="0.32222222222222224" />
       </map>

@@ -78,11 +78,8 @@ public class SignUpActivity extends AppCompatActivity {
                             editor.putString("id", id);
                             editor.apply();
 
-                            if (sharedPreferences.getString("userType", "").equals("lender")) {
-                                FirebaseManager.getInstance().insertLender(new Lender(id, name, surnames, email, phoneNumber, password, birthday));
-                            } else if (sharedPreferences.getString("userType", "").equals("borrower")) {
-                                FirebaseManager.getInstance().insertBorrower(new Borrower(id, name, surnames, email, phoneNumber, password, birthday));
-                            }   
+                            FirebaseManager.getInstance().insertLender(new Lender(id, name, surnames, email, phoneNumber, password, birthday));
+                            FirebaseManager.getInstance().insertBorrower(new Borrower(id, name, surnames, email, phoneNumber, password, birthday));
 
                             startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
                         } else {

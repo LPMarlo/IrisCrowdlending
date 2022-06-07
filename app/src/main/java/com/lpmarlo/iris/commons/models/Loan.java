@@ -1,5 +1,7 @@
 package com.lpmarlo.iris.commons.models;
 
+import com.google.firebase.Timestamp;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.type.DateTime;
 
 import java.util.Date;
@@ -8,8 +10,8 @@ public class Loan {
 
     private String id;
     private String description;
-    private Date createDate;
-    private Date deadline;
+    private Timestamp createDate;
+    private Timestamp deadline;
     private String status;
     private double paidAmount;
     private double borrowedAmount;
@@ -18,14 +20,17 @@ public class Loan {
     private int numberOfFees;
     private String borrowerId;
 
-    public Loan(String requestAmount, String description, String borrowerId, Date createDate, double interest, String pending, int numberOfFees, Date deadline) {
+    public Loan() {
+    }
+
+    public Loan(String requestAmount, String description, String borrowerId, Date createDate, double interest, int numberOfFees, Date deadline) {
         this.requestedAmount = Double.parseDouble(requestAmount);
         this.description = description;
         this.borrowerId = borrowerId;
-        this.createDate = createDate;
-        this.deadline = deadline;
+        this.createDate = new Timestamp(createDate);
+        this.deadline = new Timestamp(deadline);
         this.interest = interest;
-        this.status = pending;
+        this.status = "PENDING";
         this.numberOfFees = numberOfFees;
     }
 
@@ -45,19 +50,19 @@ public class Loan {
         this.description = description;
     }
 
-    public Date getCreateDate() {
+    public Timestamp getCreateDate() {
         return createDate;
     }
 
-    public void setCreateDate(Date createDate) {
+    public void setCreateDate(Timestamp createDate) {
         this.createDate = createDate;
     }
 
-    public Date getDeadline() {
+    public Timestamp getDeadline() {
         return deadline;
     }
 
-    public void setDeadline(Date deadline) {
+    public void setDeadline(Timestamp deadline) {
         this.deadline = deadline;
     }
 
@@ -65,7 +70,7 @@ public class Loan {
         return status;
     }
 
-    public void setStatus(String state) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
