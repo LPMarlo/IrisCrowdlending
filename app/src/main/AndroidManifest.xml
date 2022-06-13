@@ -9,8 +9,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Iris">
         <activity
+            android:name=".ChangeData"
+            android:exported="false"
+            android:label="@string/title_activity_change_data"
+            android:theme="@style/Theme.Iris.NoActionBar" />
+        <activity
             android:name=".lender.LenderSettingsActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".borrower.BorrowerSettingsActivity"
             android:exported="false" />
@@ -20,7 +25,7 @@
         <activity
             android:name=".borrower.BorrowerMainActivity"
             android:exported="false"
-            android:windowSoftInputMode="adjustPan"/>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".lender.LenderMainActivity"
             android:exported="false" />

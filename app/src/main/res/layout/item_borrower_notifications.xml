@@ -9,7 +9,7 @@
     android:background="@drawable/card_background">
 
     <TextView
-        android:id="@+id/borrowerNameLenderLoansTextView"
+        android:id="@+id/lenderNamePaymentTextView"
         android:layout_width="83dp"
         android:layout_height="25dp"
         android:layout_marginStart="28dp"
@@ -19,42 +19,39 @@
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/profilePictureLenderLoansImageView"
+        app:layout_constraintStart_toEndOf="@+id/profileLenderPaymentImageView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/statusLenderLoansTextView"
+        android:id="@+id/amountPaymentTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="25dp"
         android:autoSizeTextType="uniform"
         android:text="@string/subtitle"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/borrowerNameLenderLoansTextView"
-        app:layout_constraintTop_toBottomOf="@+id/borrowerNameLenderLoansTextView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toEndOf="@+id/profileLenderPaymentImageView" />
 
     <ImageView
-        android:id="@+id/profilePictureLenderLoansImageView"
+        android:id="@+id/profileLenderPaymentImageView"
         android:layout_width="72dp"
         android:layout_height="72dp"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/card_background_teal" />
 
     <TextView
-        android:id="@+id/dateLenderLoansTextView"
+        android:id="@+id/createDatePaymentTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="36dp"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.506" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

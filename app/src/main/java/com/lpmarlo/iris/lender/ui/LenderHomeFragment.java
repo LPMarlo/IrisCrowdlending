@@ -15,7 +15,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.lpmarlo.iris.R;
 import com.lpmarlo.iris.commons.models.Loan;
-import com.lpmarlo.iris.lender.ui.adapters.LenderLoansAdapter;
+import com.lpmarlo.iris.lender.ui.adapters.LenderHomeAdapter;
 
 public class LenderHomeFragment extends Fragment {
 
@@ -34,7 +34,7 @@ public class LenderHomeFragment extends Fragment {
         RecyclerView lenderHomeRecycleView = rootView.findViewById(R.id.lenderHomeRecycleView);
         lenderHomeRecycleView.setLayoutManager(new LinearLayoutManager(requireContext()));
 
-        LenderLoansAdapter adapter = new LenderLoansAdapter(options);
+        LenderHomeAdapter adapter = new LenderHomeAdapter(options);
         adapter.startListening();
         lenderHomeRecycleView.setAdapter(adapter);
 
