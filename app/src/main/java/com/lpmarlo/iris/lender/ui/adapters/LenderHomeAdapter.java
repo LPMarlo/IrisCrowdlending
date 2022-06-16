@@ -35,7 +35,7 @@ public class LenderHomeAdapter extends FirestoreRecyclerAdapter<Loan, LenderHome
     @Override
     protected void onBindViewHolder(@NonNull LenderHomeViewHolder holder, int position, @NonNull Loan model) {
         holder.profilePictureLenderHomeImageView.setImageResource(R.drawable.ic_baseline_person_24);
-        holder.amountLenderHomeTextView.setText(String.format("%.0f", model.getBorrowedAmount()) + "€ / " + String.format("%.0f", model.getRequestedAmount()) + "€");
+        holder.amountLenderHomeTextView.setText(String.format("%.0f", model.getBorrowedAmount()) + " / " + String.format("%.0f", model.getRequestedAmount()));
         holder.descriptionLenderHomeTextView.setText(model.getDescription());
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -89,7 +89,7 @@ public class LenderHomeAdapter extends FirestoreRecyclerAdapter<Loan, LenderHome
             }
         });
         SharedPreferences sharedPreferences = holder.itemView.getContext().getSharedPreferences("loanId", Context.MODE_PRIVATE);
-        @SuppressLint("CommitPrefEdits") SharedPreferences.Editor editor = sharedPreferences.edit();
+        SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("paymentLoanId", model.getId());
         editor.apply();
     }

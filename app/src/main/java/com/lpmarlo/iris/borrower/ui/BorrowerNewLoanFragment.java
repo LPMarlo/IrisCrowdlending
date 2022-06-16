@@ -47,7 +47,7 @@ public class BorrowerNewLoanFragment extends Fragment {
             } else if (TextUtils.isEmpty(description)) {
                 descriptionNewLoanEditText.setError("Required");
             } else if (Double.parseDouble(amount) < 300) {
-                amountNewLoanEditText.setError("Amount must be greater than 300");
+                amountNewLoanEditText.setError("Minimum amount is 300");
             } else {
                 FirebaseManager fbm = FirebaseManager.getInstance();
                 fbm.createLoan(amount, description, getContext());

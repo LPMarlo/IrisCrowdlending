@@ -3,6 +3,7 @@
     <string name="your_name">Name</string>
     <string name="loginTitle">Login</string>
     <string name="email">Email</string>
+    <string name="noti_description">You have borrowed </string>
     <string name="didn_t_have_any_account_sign_up_now">Didn\'t have any account? <u>Sign Up now</u></string>
     <string name="to_continue_using_this_app_please_sign_in_first">To continue using this app, please sign in first.</string>
     <string name="sign_up">Sign Up</string>

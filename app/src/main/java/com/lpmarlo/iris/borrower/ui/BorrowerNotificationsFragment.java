@@ -46,7 +46,7 @@ public class BorrowerNotificationsFragment extends Fragment {
         RecyclerView notificationsRecyclerView = rootView.findViewById(R.id.notificationsRecyclerView);
         notificationsRecyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
 
-        NotificationsAdapter adapter = new NotificationsAdapter(optionsPayment);
+        NotificationsAdapter adapter = new NotificationsAdapter(optionsPayment, getContext());
         adapter.startListening();
         notificationsRecyclerView.setAdapter(adapter);
 

@@ -21,6 +21,7 @@
 
     <Button
         android:id="@+id/changeDataBorrowerSettingsButton4"
+        android:onClick="toChangeDataLender"
         android:layout_width="319dp"
         android:layout_height="55dp"
         android:layout_marginTop="36dp"

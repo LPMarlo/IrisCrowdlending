@@ -10,6 +10,8 @@ import android.view.View;
 import com.google.firebase.auth.FirebaseAuth;
 import com.lpmarlo.iris.R;
 import com.lpmarlo.iris.borrower.BorrowerMainActivity;
+import com.lpmarlo.iris.borrower.BorrowerSettingsActivity;
+import com.lpmarlo.iris.commons.ChangeDataActivity;
 import com.lpmarlo.iris.commons.ChoiceProfileActivity;
 import com.lpmarlo.iris.commons.firebase.FirebaseManager;
 import com.lpmarlo.iris.commons.models.Lender;
@@ -31,5 +33,9 @@ public class LenderSettingsActivity extends AppCompatActivity {
         FirebaseAuth.getInstance().signOut();
         startActivity(new Intent(LenderSettingsActivity.this, ChoiceProfileActivity.class));
         finish();
+    }
+
+    public void toChangeDataLender(View view) {
+        startActivity(new Intent(LenderSettingsActivity.this, ChangeDataActivity.class));
     }
 }

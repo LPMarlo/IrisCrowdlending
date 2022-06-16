@@ -4,6 +4,7 @@
     <string name="your_name">Nombre</string>
     <string name="loginTitle">Iniciar sesión</string>
     <string name="email">Correo electrónico</string>
+    <string name="noti_description">Te ha préstado</string>
     <string name="didn_t_have_any_account_sign_up_now">¿No tienes ninguna cuenta? <u>Regístrese ahora</u></string>
     <string name="to_continue_using_this_app_please_sign_in_first">Para continuar usando esta aplicación, inicie sesión primero.</string>
     <string name="sign_up">Registro</string>

@@ -1,6 +1,7 @@
 package com.lpmarlo.iris.borrower.ui.adapters;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,8 +20,11 @@ import com.lpmarlo.iris.commons.models.Payment;
 
 public class NotificationsAdapter extends FirestoreRecyclerAdapter<Payment, NotificationsViewHolder> {
 
-    public NotificationsAdapter(@NonNull FirestoreRecyclerOptions<Payment> options) {
+    private Context context;
+
+    public NotificationsAdapter(@NonNull FirestoreRecyclerOptions<Payment> options, Context context) {
         super(options);
+        this.context = context;
     }
 
     @SuppressLint({"SetTextI18n", "DefaultLocale"})
@@ -31,7 +35,7 @@ public class NotificationsAdapter extends FirestoreRecyclerAdapter<Payment, Noti
             holder.createDatePaymentTextView.setText(String.format("%d", minutes / 60) + "h");
         else holder.createDatePaymentTextView.setText(String.format("%d", minutes) + "m");
 
-        holder.amountPaymentTextView.setText("You have borrowed " + model.getAmount());
+        holder.amountPaymentTextView.setText(context.getString(R.string.noti_description) + " " + model.getAmount());
         holder.profileLenderPaymentImageView.setImageResource(R.drawable.ic_baseline_person_24);
 
         FirebaseFirestore.getInstance()

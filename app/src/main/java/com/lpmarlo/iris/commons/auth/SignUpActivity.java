@@ -95,7 +95,7 @@ public class SignUpActivity extends AppCompatActivity {
             surnamesSignUpEditText.setError("Required.");
         } else if (TextUtils.isEmpty(email)) {
             emailSignUpEditText.setError("Required.");
-        } else if (!email.matches("^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$")) {
+        } else if (!email.matches("^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\\d\\d$")) {
             emailSignUpEditText.setError("Invalid email.");
         } else if (TextUtils.isEmpty(phoneNumber)) {
             phoneNumberSignUpEditText.setError("Required.");
