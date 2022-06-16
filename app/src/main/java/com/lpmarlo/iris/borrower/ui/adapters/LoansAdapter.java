@@ -19,18 +19,15 @@ public class LoansAdapter extends FirestoreRecyclerAdapter<Loan, LoansViewHolder
         super(options);
     }
 
-    @SuppressLint({"SetTextI18n", "DefaultLocale"})
+    @SuppressLint({"DefaultLocale", "SetTextI18n"})
     @Override
     protected void onBindViewHolder(@NonNull LoansViewHolder holder, int position, @NonNull Loan model) {
-        holder.statusTextView.setText(model.getStatus());
-        holder.amountTextView.setText(String.format("%.0f", model.getBorrowedAmount()) + "€ / " + String.format("%.0f", model.getRequestedAmount()) + "€");
+        long minutes = (System.currentTimeMillis() - (model.getCreateDate().getSeconds() * 1000)) / (60 * 1000);
+        if (minutes > 60) holder.dateTextView.setText(String.format("%d", minutes / 60) + "h");
+        else holder.dateTextView.setText(String.format("%d", minutes) + "m");
 
-        long minutes = (System.currentTimeMillis() - model.getCreateDate().getSeconds() * 1000) / (60 * 1000);
-        if (minutes > 60) {
-            holder.dateTextView.setText(String.format("%d", minutes / 60) + "h");
-        } else {
-            holder.dateTextView.setText(String.format("%d", minutes) + "m");
-        }
+        holder.statusTextView.setText(model.getStatus());
+        holder.amountTextView.setText(String.format("%.0f", model.getBorrowedAmount()) + " / " + String.format("%.0f", model.getRequestedAmount()));
         holder.descriptionTextView.setText(model.getDescription());
     }
 

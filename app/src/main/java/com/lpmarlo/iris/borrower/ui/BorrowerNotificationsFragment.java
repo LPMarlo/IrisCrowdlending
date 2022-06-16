@@ -33,13 +33,9 @@ public class BorrowerNotificationsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_borrower_notifications, container, false);
 
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("loan", Context.MODE_PRIVATE);
-        String loanId = sharedPreferences.getString("loanId", "");
-
-        Query queryPayment = db.collection("payments")
-                .whereEqualTo("loanId", loanId)
+        SharedPreferences sharedPreferences = requireContext().getSharedPreferences("loan", Context.MODE_PRIVATE);
+        Query queryPayment = FirebaseFirestore.getInstance().collection("payments")
+                .whereEqualTo("loanId", sharedPreferences.getString("loanId", ""))
                 .orderBy("date", Query.Direction.DESCENDING)
                 .limit(7);
 

@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.lpmarlo.iris.R;
 import com.lpmarlo.iris.commons.firebase.FirebaseManager;
 import com.lpmarlo.iris.commons.models.Borrower;
@@ -36,8 +37,6 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
         if (getSupportActionBar() != null) getSupportActionBar().hide();
 
-        setupActivityLink();
-
         nameSignUpEditText = findViewById(R.id.nameSignUpEditText);
         surnamesSignUpEditText = findViewById(R.id.surnamesSignUpEditText);
         emailSignUpEditText = findViewById(R.id.emailSignUpEditText);
@@ -45,11 +44,8 @@ public class SignUpActivity extends AppCompatActivity {
         passwordSignUpEditText = findViewById(R.id.passwordSignUpEditText);
         birthdaySignUpEditText = findViewById(R.id.birthdaySignUpEditText);
         termsAndConditionsSignUpCheckBox = findViewById(R.id.termsAndConditionsSignUpCheckBox);
-    }
 
-    private void setupActivityLink() {
-        TextView linkToLoginTextView = findViewById(R.id.linkToLoginTextView);
-        linkToLoginTextView.setOnClickListener(v -> startActivity(new Intent(SignUpActivity.this, LoginActivity.class)));
+        findViewById(R.id.linkToLoginTextView).setOnClickListener(v -> startActivity(new Intent(SignUpActivity.this, LoginActivity.class)));
     }
 
     public void signUp(View view) {
@@ -78,8 +74,9 @@ public class SignUpActivity extends AppCompatActivity {
                             editor.putString("id", id);
                             editor.apply();
 
-                            FirebaseManager.getInstance().insertLender(new Lender(id, name, surnames, email, phoneNumber, password, birthday));
-                            FirebaseManager.getInstance().insertBorrower(new Borrower(id, name, surnames, email, phoneNumber, password, birthday));
+                            FirebaseManager fm = FirebaseManager.getInstance();
+                            fm.insertLender(new Lender(id, name, surnames, email, phoneNumber, password, birthday));
+                            fm.insertBorrower(new Borrower(id, name, surnames, email, phoneNumber, password, birthday));
 
                             startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
                         } else {

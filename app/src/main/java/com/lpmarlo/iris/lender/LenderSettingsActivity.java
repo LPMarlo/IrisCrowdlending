@@ -19,7 +19,7 @@ public class LenderSettingsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if(getSupportActionBar() != null) getSupportActionBar().hide(); // hide the title bar
+        if (getSupportActionBar() != null) getSupportActionBar().hide();
         setContentView(R.layout.activity_lender_settings);
     }
 

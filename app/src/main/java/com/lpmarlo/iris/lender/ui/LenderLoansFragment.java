@@ -27,7 +27,7 @@ public class LenderLoansFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView =  inflater.inflate(R.layout.fragment_lender_loans, container, false);
 
-        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("loanId", Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("loanId", Context.MODE_PRIVATE);
         String paymentLoanId = sharedPreferences.getString("paymentLoanId", "");
 
         Query query = FirebaseFirestore.getInstance().collection("loans")

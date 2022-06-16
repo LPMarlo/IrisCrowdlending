@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Iris">
         <activity
-            android:name=".ChangeData"
+            android:name=".commons.ChangeDataActivity"
             android:exported="false"
             android:label="@string/title_activity_change_data"
             android:theme="@style/Theme.Iris.NoActionBar" />

@@ -30,18 +30,13 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        if(getSupportActionBar() != null) getSupportActionBar().hide(); // hide the title bar
-
-        setupActivityLink();
+        if (getSupportActionBar() != null) getSupportActionBar().hide();
 
         loginButton = findViewById(R.id.loginButton);
         emailLoginEditText = findViewById(R.id.emailLoginEditText);
         passwordLoginEditText = findViewById(R.id.passwordLoginEditText);
-    }
 
-    private void setupActivityLink() {
-        TextView linkToSignUpTextView = findViewById(R.id.linkToSignUpTextView);
-        linkToSignUpTextView.setOnClickListener(v -> startActivity(new Intent(LoginActivity.this, SignUpActivity.class)));
+        findViewById(R.id.linkToSignUpTextView).setOnClickListener(v -> startActivity(new Intent(LoginActivity.this, SignUpActivity.class)));
     }
 
     public void login(View view) {
@@ -50,16 +45,15 @@ public class LoginActivity extends AppCompatActivity {
 
         SharedPreferences sharedPref = getSharedPreferences("user", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
-        if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
+        if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password))
             Toast.makeText(this, "Please enter your email and password", Toast.LENGTH_SHORT).show();
-        } else if (!email.matches("^[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+$")) {
+        else if (!email.matches("^[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+$"))
             Toast.makeText(this, "Please enter a valid email", Toast.LENGTH_SHORT).show();
-        } else {
+        else {
             FirebaseAuth.getInstance()
                     .signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(task -> {
-                        if(task.isSuccessful()) {
-
+                        if (task.isSuccessful()) {
                             editor.putString("email", email);
                             editor.putString("password", password);
                             editor.putString("userId", Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid());

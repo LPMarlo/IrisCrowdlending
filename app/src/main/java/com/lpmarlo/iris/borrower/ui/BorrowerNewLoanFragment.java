@@ -32,8 +32,7 @@ public class BorrowerNewLoanFragment extends Fragment {
     Button createNewLoanButton;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_borrower_new_loan, container, false);
         amountNewLoanEditText = rootView.findViewById(R.id.amountNewLoanEditText);
         descriptionNewLoanEditText = rootView.findViewById(R.id.descriptionNewLoanEditText);
@@ -53,7 +52,6 @@ public class BorrowerNewLoanFragment extends Fragment {
                 FirebaseManager fbm = FirebaseManager.getInstance();
                 fbm.createLoan(amount, description, getContext());
             }
-
 
             amountNewLoanEditText.setText("");
             descriptionNewLoanEditText.setText("");

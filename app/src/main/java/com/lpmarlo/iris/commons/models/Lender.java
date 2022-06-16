@@ -15,6 +15,7 @@ public class Lender {
     public Lender() {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
     }
+
     public Lender(String id, String name, String surnames, String email, String phoneNumber, String password, String birthday) {
         this.id = id;
         this.name = name;

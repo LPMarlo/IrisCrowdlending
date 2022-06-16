@@ -18,19 +18,11 @@ import com.lpmarlo.iris.lender.LenderSettingsActivity;
 
 public class BorrowerSettingsActivity extends AppCompatActivity {
 
-    TextView titleTextView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if(getSupportActionBar() != null) getSupportActionBar().hide(); // hide the title bar
+        if (getSupportActionBar() != null) getSupportActionBar().hide();
         setContentView(R.layout.activity_borrower_settings);
-
-        titleTextView = findViewById(R.id.titleTextView);
-        titleTextView.setOnClickListener(v -> {
-            Intent intent = getPackageManager().getLaunchIntentForPackage("com.google.android.calculator");
-            startActivity(intent);
-        });
     }
 
     public void logoutBorrower(View view) {

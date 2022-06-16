@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if(getSupportActionBar() != null) getSupportActionBar().hide(); // hide the title bar
+        if (getSupportActionBar() != null) getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
 
         checkLogin();
@@ -39,11 +39,9 @@ public class MainActivity extends AppCompatActivity {
                 FirebaseAuth.getInstance()
                         .signInWithEmailAndPassword(email, password);
                 startActivity(new Intent(MainActivity.this, BorrowerMainActivity.class));
-            } else {
-                startActivity(new Intent(MainActivity.this, ChoiceProfileActivity.class));
             }
-        } else {
-            startActivity(new Intent(MainActivity.this, ChoiceProfileActivity.class));
+            else startActivity(new Intent(MainActivity.this, ChoiceProfileActivity.class));
         }
+        else startActivity(new Intent(MainActivity.this, ChoiceProfileActivity.class));
     }
 }

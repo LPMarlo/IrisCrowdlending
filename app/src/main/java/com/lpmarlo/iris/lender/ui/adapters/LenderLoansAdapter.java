@@ -33,27 +33,25 @@ public class LenderLoansAdapter extends FirestoreRecyclerAdapter<Loan, LenderLoa
     @SuppressLint({"SetTextI18n", "DefaultLocale"})
     @Override
     protected void onBindViewHolder(@NonNull LenderLoansViewHolder holder, int position, @NonNull Loan model) {
-        Log.e("LenderLoansAdapter", model.toString());
+        long minutes = (System.currentTimeMillis() - (model.getCreateDate().getSeconds() * 1000)) / (60 * 1000);
+        if (minutes > 60)
+            holder.dateLenderLoansTextView.setText(String.format("%d", minutes / 60) + "h");
+        else holder.dateLenderLoansTextView.setText(String.format("%d", minutes) + "m");
+
+        holder.profilePictureLenderLoansImageView.setImageResource(R.drawable.ic_baseline_person_24);
+        holder.statusLenderLoansTextView.setText(model.getStatus());
+
         FirebaseFirestore.getInstance().collection("borrowers")
                 .document(model.getBorrowerId())
                 .get()
                 .addOnSuccessListener(documentSnapshot -> {
-                    if (documentSnapshot.exists()) {
-                        holder.borrowerNameLenderLoansTextView.setText(String.format("%s",
-                                documentSnapshot.getString("name")));
-                        holder.profilePictureLenderLoansImageView.setImageResource(R.drawable.ic_baseline_person_24);
-                    } else {
+                    if (documentSnapshot.exists())
+                        holder.borrowerNameLenderLoansTextView.setText(String.format("%s", documentSnapshot.getString("name")));
+                    else {
                         holder.borrowerNameLenderLoansTextView.setText("");
-                        holder.profilePictureLenderLoansImageView.setImageResource(R.drawable.ic_baseline_person_24);
+                        Log.e("LenderLoansAdapter", "No such document");
                     }
                 });
-        holder.statusLenderLoansTextView.setText(model.getStatus());
-        long minutes = (System.currentTimeMillis() - model.getCreateDate().getSeconds() * 1000) / (60 * 1000);
-        if (minutes > 60) {
-            holder.dateLenderLoansTextView.setText(String.format("%d", minutes / 60) + "h");
-        } else {
-            holder.dateLenderLoansTextView.setText(String.format("%d", minutes) + "m");
-        }
     }
 
     @NonNull

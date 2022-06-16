@@ -30,28 +30,29 @@ public class BorrowerHomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_borrower_home, container, false);
 
-        // Guardar el id del ultimo prestamo en SharedPreferences
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        db.collection("loans").whereEqualTo("borrowerId", Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()).orderBy("createDate", Query.Direction.DESCENDING).limit(1).get().addOnSuccessListener(queryDocumentSnapshots -> {
-            if (queryDocumentSnapshots.isEmpty()) {
-                Log.d("BorrowerHomeFragment", "No hay prestamos");
-            } else {
-                Log.d("BorrowerHomeFragment", "Hay prestamos");
-                for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
-                    Loan loan = documentSnapshot.toObject(Loan.class);
-                    Log.d("BorrowerHomeFragment", "Prestamo: " + loan.getId());
-                    SharedPreferences sharedPreferences = getActivity().getSharedPreferences("loan", Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("loanId", loan.getId());
-                    editor.apply();
-                }
-            }
-        });
+        FirebaseFirestore.getInstance().collection("loans")
+                .whereEqualTo("borrowerId", Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid())
+                .orderBy("createDate", Query.Direction.DESCENDING)
+                .limit(1)
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    if (queryDocumentSnapshots.isEmpty())
+                        Log.e("BorrowerHomeFragment", "No loans found");
+                    else {
+                        Log.e("BorrowerHomeFragment", "Loans found");
+                        for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
+                            Loan loan = documentSnapshot.toObject(Loan.class);
 
+                            SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("loan", Context.MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putString("loanId", loan.getId());
+                            editor.apply();
+                        }
+                    }
+                });
 
-        String userId = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
         Query query = FirebaseFirestore.getInstance().collection("loans")
-                .whereEqualTo("borrowerId", userId)
+                .whereEqualTo("borrowerId", Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid())
                 .orderBy("createDate", Query.Direction.DESCENDING)
                 .limit(7);
 

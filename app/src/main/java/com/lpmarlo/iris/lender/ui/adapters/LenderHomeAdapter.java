@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,21 +34,23 @@ public class LenderHomeAdapter extends FirestoreRecyclerAdapter<Loan, LenderHome
     @SuppressLint({"SetTextI18n", "DefaultLocale"})
     @Override
     protected void onBindViewHolder(@NonNull LenderHomeViewHolder holder, int position, @NonNull Loan model) {
-        FirebaseFirestore.getInstance().collection("borrowers")
+        holder.profilePictureLenderHomeImageView.setImageResource(R.drawable.ic_baseline_person_24);
+        holder.amountLenderHomeTextView.setText(String.format("%.0f", model.getBorrowedAmount()) + "€ / " + String.format("%.0f", model.getRequestedAmount()) + "€");
+        holder.descriptionLenderHomeTextView.setText(model.getDescription());
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("borrowers")
                 .document(model.getBorrowerId())
                 .get()
                 .addOnSuccessListener(documentSnapshot -> {
                     if (documentSnapshot.exists()) {
-                        holder.borrowerNameLenderHomeTextView.setText(String.format("%s",
-                                documentSnapshot.getString("name")));
-                        holder.profilePictureLenderHomeImageView.setImageResource(R.drawable.ic_baseline_person_24);
+                        holder.borrowerNameLenderHomeTextView.setText(String.format("%s", documentSnapshot.getString("name")));
                     } else {
                         holder.borrowerNameLenderHomeTextView.setText("");
-                        holder.profilePictureLenderHomeImageView.setImageResource(R.drawable.ic_baseline_person_24);
+                        Log.e("LenderHomeAdapter", "No such document");
                     }
                 });
-        holder.amountLenderHomeTextView.setText(String.format("%.0f", model.getBorrowedAmount()) + "€ / " + String.format("%.0f", model.getRequestedAmount()) + "€");
-        holder.descriptionLenderHomeTextView.setText(model.getDescription());
+
         holder.paymentImageButton.setOnClickListener(v -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(holder.itemView.getContext());
             View view = LayoutInflater.from(holder.itemView.getContext()).inflate(R.layout.dialog_payment, null);
@@ -60,22 +63,23 @@ public class LenderHomeAdapter extends FirestoreRecyclerAdapter<Loan, LenderHome
                 button.setOnClickListener(
                         v1 -> {
                             String amount = ((EditText) view.findViewById(R.id.paymentEditText)).getText().toString();
-                            if (TextUtils.isEmpty(amount) || amount.equals("0")) {
+                            if (TextUtils.isEmpty(amount) || amount.equals("0"))
                                 Toast.makeText(holder.itemView.getContext(), "Please enter an amount", Toast.LENGTH_SHORT).show();
-                            } else if (Double.parseDouble(amount) > (model.getRequestedAmount() - model.getBorrowedAmount())) {
+
+                            else if (Double.parseDouble(amount) > (model.getRequestedAmount() - model.getBorrowedAmount()))
                                 Toast.makeText(holder.itemView.getContext(), "Amount exceeds the amount requested", Toast.LENGTH_SHORT).show();
-                            } else if (Double.parseDouble(amount) <= (model.getRequestedAmount() - model.getBorrowedAmount())) {
+
+                            else if (Double.parseDouble(amount) <= (model.getRequestedAmount() - model.getBorrowedAmount())) {
                                 String lenderId = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
                                 FirebaseFirestore.getInstance().collection("payments")
                                         .add(new Payment(lenderId, model.getId(), amount));
 
-                                if (Double.parseDouble(amount) == (model.getRequestedAmount() - model.getBorrowedAmount())) {
-                                    FirebaseFirestore.getInstance().collection("loans")
+                                if (Double.parseDouble(amount) == (model.getRequestedAmount() - model.getBorrowedAmount()))
+                                    db.collection("loans")
                                             .document(model.getId())
                                             .update("status", "ACCEPTED");
-                                }
 
-                                FirebaseFirestore.getInstance().collection("loans")
+                                db.collection("loans")
                                         .document(model.getId())
                                         .update("borrowedAmount", model.getBorrowedAmount() + Double.parseDouble(amount));
                             }

@@ -22,6 +22,5 @@ public class LenderLoansViewHolder extends RecyclerView.ViewHolder {
         statusLenderLoansTextView = itemView.findViewById(R.id.statusLenderLoansTextView);
         profilePictureLenderLoansImageView = itemView.findViewById(R.id.profilePictureLenderLoansImageView);
         dateLenderLoansTextView = itemView.findViewById(R.id.dateLenderLoansTextView);
-
     }
 }

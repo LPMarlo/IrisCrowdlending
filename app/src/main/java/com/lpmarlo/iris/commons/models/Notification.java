@@ -10,7 +10,6 @@ public class Notification {
     private String date;
 
 
-
     public Notification(String lenderName, String amount, String date) {
         this.lenderName = lenderName;
         this.amount = amount;

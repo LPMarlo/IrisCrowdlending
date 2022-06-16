@@ -26,24 +26,22 @@ public class NotificationsAdapter extends FirestoreRecyclerAdapter<Payment, Noti
     @SuppressLint({"SetTextI18n", "DefaultLocale"})
     @Override
     protected void onBindViewHolder(@NonNull NotificationsViewHolder holder, int position, @NonNull Payment model) {
-        holder.amountPaymentTextView.setText("You have borrowed " + model.getAmount() + "€");
         long minutes = (System.currentTimeMillis() - model.getDate().getSeconds() * 1000) / (60 * 1000);
-        if (minutes > 60) {
+        if (minutes > 60)
             holder.createDatePaymentTextView.setText(String.format("%d", minutes / 60) + "h");
-        } else {
-            holder.createDatePaymentTextView.setText(String.format("%d", minutes) + "m");
-        }
+        else holder.createDatePaymentTextView.setText(String.format("%d", minutes) + "m");
+
+        holder.amountPaymentTextView.setText("You have borrowed " + model.getAmount());
+        holder.profileLenderPaymentImageView.setImageResource(R.drawable.ic_baseline_person_24);
+
         FirebaseFirestore.getInstance()
                 .collection("lenders")
                 .document(model.getLenderId())
                 .get()
                 .addOnSuccessListener(documentSnapshot -> {
-                    if (documentSnapshot.exists()) {
+                    if (documentSnapshot.exists())
                         holder.lenderNamePaymentTextView.setText(documentSnapshot.getString("name"));
-                        holder.profileLenderPaymentImageView.setImageResource(R.drawable.ic_baseline_person_24);
-                    } else {
-                        holder.profileLenderPaymentImageView.setImageResource(R.drawable.ic_baseline_person_24);
-                    }
+                    else Log.d("NotificationsAdapter", "DocumentSnapshot not exists");
                 });
     }
 

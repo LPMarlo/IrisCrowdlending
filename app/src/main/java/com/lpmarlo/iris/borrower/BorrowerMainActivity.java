@@ -22,19 +22,14 @@ import com.lpmarlo.iris.databinding.ActivityLenderMainBinding;
 
 public class BorrowerMainActivity extends AppCompatActivity {
 
-    private ActivityBorrowerMainBinding binding;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if(getSupportActionBar() != null) getSupportActionBar().hide(); // hide the title bar
+        if (getSupportActionBar() != null) getSupportActionBar().hide();
 
-        binding = ActivityBorrowerMainBinding.inflate(getLayoutInflater());
+        ActivityBorrowerMainBinding binding = ActivityBorrowerMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        BottomNavigationView navView = findViewById(R.id.lender_nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_borrower_home, R.id.navigation_borrower_new_loan, R.id.navigation_borrower_notifications)
                 .build();
